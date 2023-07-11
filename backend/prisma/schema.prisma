@@ -10,3 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Quote {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  author    String?
+  category  String?
+  submitter String
+  text      String
+  verified  Boolean
+}

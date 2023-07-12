@@ -3,9 +3,9 @@ import { Router, type Request, type Response } from "express"
 import { getQuote, listQuotes } from "./quote.service"
 import type { Quote } from "../types"
 
-export const quoteRouter = Router()
+export const router = Router()
 
-quoteRouter.get("/", async (request: Request, response: Response) => {
+router.get("/", async (_request: Request, response: Response) => {
   try {
     const quotes = await listQuotes()
     return response.status(200).json(quotes)
@@ -14,7 +14,7 @@ quoteRouter.get("/", async (request: Request, response: Response) => {
   }
 })
 
-quoteRouter.get("/:id", async (request: Request, response: Response) => {
+router.get("/:id", async (request: Request, response: Response) => {
   const id: Quote["id"] = parseInt(request.params.id, 10)
 
   try {

@@ -2,7 +2,7 @@ import { config } from "dotenv"
 import express from "express"
 import cors from "cors"
 
-import { quoteRouter } from "./quote/quote.router"
+import { router } from "./quote/quote.router"
 
 config()
 
@@ -15,6 +15,6 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.use("/api/quotes", quoteRouter)
+app.use("/api/quotes", router)
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))

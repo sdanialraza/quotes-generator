@@ -348,6 +348,4 @@ async function seed() {
   }
 }
 
-seed()
-  .catch(console.error)
-  .finally(async () => await db.$disconnect())
+seed().catch(console.error).finally(db.$disconnect)

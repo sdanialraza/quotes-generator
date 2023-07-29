@@ -9,5 +9,9 @@ module.exports = {
     extend: {
       colors: {
         "background-color": "#526d82",
+        "card-color": "#27374b",
+        "hover-color": "#6b84a0",
       },
+    },
+  },
 }

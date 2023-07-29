@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast"
 import type { Metadata } from "next"
 import type { PropsWithChildren } from "react"
 
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body className={inter.variable}>{children}</body>
+        <Toaster />
     </html>
   )
 }

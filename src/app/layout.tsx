@@ -58,8 +58,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={inter.variable}>{children}</body>
+      <body className={`${inter.variable} bg-background-color text-white antialiased`}>
+        {children}
         <Toaster />
+      </body>
     </html>
   )
 }

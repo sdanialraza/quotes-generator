@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "react-hot-toast"
 import type { Metadata } from "next"
 import type { PropsWithChildren } from "react"
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <body className={`${inter.variable} bg-background-color text-white antialiased`}>
         {children}
+        <Analytics />
         <Toaster />
       </body>
     </html>

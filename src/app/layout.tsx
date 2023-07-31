@@ -40,9 +40,11 @@ export const metadata: Metadata = {
   keywords: ["Quotes", "Generator", "Quotes Generator", "sdanialraza", "Danial", "Raza"],
   manifest: "/site.manifest",
   openGraph: {
+    description: "A quotes generator web app created by Danial Raza.",
     siteName: "Quotes Generator",
-    title: "Quotes",
+    title: "Quotes Generator",
     type: "website",
+    url: "https://quotes.sdanialraza.dev",
   },
   other: {
     "msapplication-TileColor": "#27374b",

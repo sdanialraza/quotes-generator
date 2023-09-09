@@ -3,9 +3,11 @@
 import { useCallback } from "react"
 import { useRouter } from "next/navigation"
 import copy from "copy-to-clipboard"
+import Link from "next/link"
 import toast from "react-hot-toast"
 
 import { rawQuotes } from "@/data/rawQuotes"
+import { REPOSITORY_LINK } from "@/util"
 import Quote from "@/components/Quote"
 import useRandomItem from "@/hooks/useRandomItem"
 
@@ -55,6 +57,14 @@ export default function Page({ params }: Props) {
       <button className="button bg-card-color hover:bg-gray-800" onClick={handleClick}>
         Generate another quote
       </button>
+      <Link
+        className="text-md text-center font-semibold underline underline-offset-4 hover:text-card-color"
+        href={REPOSITORY_LINK}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Source Code
+      </Link>
     </div>
   )
 }

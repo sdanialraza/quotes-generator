@@ -1,8 +1,8 @@
 import { useCallback } from "react"
-import copy from "copy-to-clipboard"
-import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
+import copy from "copy-to-clipboard"
 
+import { notify } from "@/util"
 import { rawQuotes } from "@/data/rawQuotes"
 import useRandomItem from "@/hooks/useRandomItem"
 
@@ -12,18 +12,6 @@ export default function useQuotes(quoteId: string) {
 
   const quote = filteredQuotes.find(quote => quote.id === parseInt(quoteId))
   const router = useRouter()
-
-  const notify = (icon: string, text: string) =>
-    toast.success(text, {
-      duration: 2500,
-      icon,
-      position: "bottom-center",
-      style: {
-        background: "#27374b",
-        borderRadius: "10px",
-        color: "#fff",
-      },
-    })
 
   const handleClick = () => {
     changeRandomQuote()

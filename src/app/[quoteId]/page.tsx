@@ -1,8 +1,7 @@
 "use client"
 
-import Link from "next/link"
-
 import { REPOSITORY_LINK } from "@/util"
+import ExternalLink from "@/components/ExternalLink"
 import Quote from "@/components/Quote"
 import useQuotes from "@/hooks/useQuotes"
 
@@ -21,14 +20,7 @@ export default function Page({ params }: Props) {
       <button className="button bg-card-color hover:bg-gray-800" onClick={handleClick}>
         Generate another quote
       </button>
-      <Link
-        className="text-md text-center font-semibold underline underline-offset-4 hover:text-card-color"
-        href={REPOSITORY_LINK}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Source Code
-      </Link>
+      <ExternalLink href={REPOSITORY_LINK}>Source Code</ExternalLink>
     </div>
   )
 }

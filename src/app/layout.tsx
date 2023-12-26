@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Danial Raza", url: "https://github.com/sdanialraza" }],
   category: "Entertainment",
   creator: "Danial Raza",
-  colorScheme: "light",
   description: "A quotes generator web app created by Danial Raza.",
   icons: {
     apple: [
@@ -49,8 +48,12 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": "#27374b",
   },
-  themeColor: "#27374b",
   title: "Quotes Generator",
+}
+
+export const viewport = {
+  colorScheme: "light",
+  themeColor: "#27374b",
   viewport: {
     initialScale: 1,
     minimumScale: 1,

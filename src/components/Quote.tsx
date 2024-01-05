@@ -1,6 +1,6 @@
-import CardDetail from "@/components/CardDetail"
+import CardDetail from "./CardDetail"
 
-import Quote from "@/types/quote"
+import type { Quote } from "../util"
 
 interface Props {
   quote: Quote | undefined

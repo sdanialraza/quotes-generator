@@ -1,4 +1,3 @@
-import Link from "next/link"
 import type { ReactNode } from "react"
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 
 export default function ExternalLink({ children, href, title }: Props) {
   return (
-    <Link
+    <a
       className="text-md text-center font-semibold underline underline-offset-4 hover:text-card-color"
       href={href}
       rel="noopener noreferrer"
@@ -17,6 +16,6 @@ export default function ExternalLink({ children, href, title }: Props) {
       title={title}
     >
       {children}
-    </Link>
+    </a>
   )
 }

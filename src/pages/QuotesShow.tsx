@@ -21,7 +21,7 @@ export default function QuotesShow() {
         onGenerate={handleGenerate}
         onShare={handleShare}
       />
-      <Link className="text-xl font-semibold text-hover-color dark:text-white" to="/favorites">
+      <Link className="mb-2 text-xl font-semibold text-hover-color dark:text-white" to="/favorites">
         Your Favorite Quotes
       </Link>
       <ExternalLink href={REPOSITORY_LINK}>

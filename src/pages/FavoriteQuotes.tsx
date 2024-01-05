@@ -9,7 +9,7 @@ export default function FavoriteQuotes() {
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-2">
-      <h1 className="mb-4 text-3xl font-bold text-hover-color dark:text-white">Favorite Quotes</h1>
+      <h1 className="mb-2 text-3xl font-bold text-hover-color dark:text-white">Favorite Quotes</h1>
       <div className="flex flex-col gap-2">{showFavoriteQuotes(favoriteQuoteIds)}</div>
       <Link to="/">
         <button className="button bg-card-color hover:bg-gray-800">Back to home</button>
@@ -20,7 +20,7 @@ export default function FavoriteQuotes() {
 
 function showFavoriteQuotes(favoriteQuoteIds: number[]) {
   if (favoriteQuoteIds.length === 0) {
-    return <p>You have no favorite quotes.</p>
+    return <p className="text-hover-color dark:text-white">You have no favorite quotes.</p>
   }
 
   const favoriteQuotes = rawQuotes.filter(quote => quote.verified && favoriteQuoteIds.includes(quote.id))

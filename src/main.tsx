@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { createRoot } from "react-dom/client"
 import { Toaster } from "react-hot-toast"
 import { StrictMode } from "react"
@@ -8,6 +9,7 @@ import { routes } from "./pages"
 
 createRoot(document.querySelector("#root")!).render(
   <StrictMode>
+    <Analytics />
     <Toaster />
     <RouterProvider router={createBrowserRouter(routes)} />
   </StrictMode>,

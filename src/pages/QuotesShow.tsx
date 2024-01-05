@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 import { REPOSITORY_LINK } from "../util"
 import ExternalLink from "../components/ExternalLink"
@@ -8,11 +8,22 @@ import useQuotes from "../hooks/useQuotes"
 
 export default function QuotesShow() {
   const { quoteId } = useParams<{ quoteId: string }>()
-  const { quote, handleCopy, handleGenerate, handleShare } = useQuotes(quoteId!)
+  const { quote, isFavorite, handleCopy, handleFavorite, handleGenerate, handleShare } = useQuotes(quoteId!)
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-2">
-      <Quote quote={quote} onCopy={handleCopy} onGenerate={handleGenerate} onShare={handleShare} />
+      <h1 className="mb-4 text-3xl font-bold text-hover-color dark:text-white">Quotes Generator</h1>
+      <Quote
+        quote={quote}
+        isFavorite={isFavorite}
+        onCopy={handleCopy}
+        onFavorite={handleFavorite}
+        onGenerate={handleGenerate}
+        onShare={handleShare}
+      />
+      <Link className="text-xl font-semibold text-hover-color dark:text-white" to="/favorites">
+        Your Favorite Quotes
+      </Link>
       <ExternalLink href={REPOSITORY_LINK}>
         <FaGithub size={24} />
       </ExternalLink>

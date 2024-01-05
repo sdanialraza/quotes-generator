@@ -1,14 +1,13 @@
-import CardDetail from "./CardDetail"
-
 import type { Quote } from "../util"
 
 interface Props {
   quote: Quote | undefined
   onCopy: () => void
+  onGenerate: () => void
   onShare: () => void
 }
 
-export default function Quote({ quote, onCopy, onShare }: Props) {
+export default function Quote({ quote, onCopy, onGenerate, onShare }: Props) {
   if (!quote)
     return (
       <div className="m-1 flex flex-col gap-4 rounded-xl bg-card-color px-5 py-6 shadow-2xl md:gap-6">
@@ -17,19 +16,24 @@ export default function Quote({ quote, onCopy, onShare }: Props) {
     )
 
   return (
-    <div className="m-1 flex flex-col gap-4 rounded-xl bg-card-color px-5 py-6 shadow-2xl md:gap-4">
-      <p>{quote.text}</p>
-      <div className="grid grid-cols-3 gap-1">
-        <CardDetail heading="Author" value={quote.author || "Unknown"} />
-        <CardDetail heading="Category" value={quote.category.join(", ") || "None"} />
-        <CardDetail heading="Submitter" value={quote.submitter} />
+    <div>
+      <div className="mt-1 flex flex-col rounded-xl bg-[#3a4c5e] px-5 py-6 shadow-2xl">
+        <p>
+          {quote.text} - {quote.author ?? "Unknown"}
+        </p>
+        <p className="text-center text-sm pb-2 text-gray-300/85">Submitted by {quote.submitter}</p>
+        <div className="flex justify-center gap-1.5">
+          <button className="button bg-card-color hover:bg-gray-800" onClick={onCopy}>
+            Copy
+          </button>
+          <button className="button bg-card-color hover:bg-gray-800" onClick={onGenerate}>
+            Generate
+          </button>
+          <button className="button bg-card-color hover:bg-gray-800" onClick={onShare}>
+            Share
+          </button>
+        </div>
       </div>
-      <button className="button bg-background-color hover:bg-slate-500" onClick={onCopy}>
-        Copy
-      </button>
-      <button className="button bg-background-color hover:bg-slate-500" onClick={onShare}>
-        Share
-      </button>
     </div>
   )
 }

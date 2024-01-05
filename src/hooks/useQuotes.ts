@@ -1,4 +1,4 @@
-import { redirect } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useCallback } from "react"
 import copy from "copy-to-clipboard"
 
@@ -7,6 +7,8 @@ import { rawQuotes } from "../data/rawQuotes"
 import useRandomItem from "./useRandomItem"
 
 export default function useQuotes(quoteId: string) {
+  const navigate = useNavigate()
+
   const filteredQuotes = rawQuotes.filter(quote => quote.verified)
   const { item: randomQuote, change: changeRandomQuote } = useRandomItem(filteredQuotes)
 
@@ -14,7 +16,7 @@ export default function useQuotes(quoteId: string) {
 
   const handleGenerate = () => {
     changeRandomQuote()
-    redirect(`/${randomQuote.id}`)
+    navigate(`/${randomQuote.id}`)
   }
 
   const handleCopy = useCallback(() => {

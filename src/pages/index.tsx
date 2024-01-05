@@ -1,6 +1,7 @@
 import { redirect, type RouteObject } from "react-router-dom"
 
 import { rawQuotes } from "../data/rawQuotes"
+import FavoriteQuotes from "./FavoriteQuotes"
 import NotFound from "./NotFound"
 import QuotesShow from "./QuotesShow"
 
@@ -17,6 +18,10 @@ export const routes: RouteObject[] = [
   {
     path: "/:quoteId",
     element: <QuotesShow />,
+  },
+  {
+    path: "/favorites",
+    element: <FavoriteQuotes />,
   },
   {
     path: "*",

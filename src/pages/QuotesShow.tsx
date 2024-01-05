@@ -1,3 +1,4 @@
+import { FaGithub } from "react-icons/fa"
 import { useParams } from "react-router-dom"
 
 import { REPOSITORY_LINK } from "../util"
@@ -15,7 +16,9 @@ export default function QuotesShow() {
       <button className="button bg-card-color hover:bg-gray-800" onClick={handleGenerate}>
         Generate another quote
       </button>
-      <ExternalLink href={REPOSITORY_LINK}>Source Code</ExternalLink>
+      <ExternalLink href={REPOSITORY_LINK}>
+        <FaGithub size={24} />
+      </ExternalLink>
     </div>
   )
 }

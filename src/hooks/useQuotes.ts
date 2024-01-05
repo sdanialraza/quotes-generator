@@ -1,21 +1,20 @@
+import { redirect } from "react-router-dom"
 import { useCallback } from "react"
-import { useRouter } from "next/navigation"
 import copy from "copy-to-clipboard"
 
-import { notify } from "@/util"
-import { rawQuotes } from "@/data/rawQuotes"
-import useRandomItem from "@/hooks/useRandomItem"
+import { notify } from "../util"
+import { rawQuotes } from "../data/rawQuotes"
+import useRandomItem from "./useRandomItem"
 
 export default function useQuotes(quoteId: string) {
   const filteredQuotes = rawQuotes.filter(quote => quote.verified)
   const { item: randomQuote, change: changeRandomQuote } = useRandomItem(filteredQuotes)
 
   const quote = filteredQuotes.find(quote => quote.id === parseInt(quoteId))
-  const router = useRouter()
 
-  const handleClick = () => {
+  const handleGenerate = () => {
     changeRandomQuote()
-    router.push(`/${randomQuote.id}`)
+    redirect(`/${randomQuote.id}`)
   }
 
   const handleCopy = useCallback(() => {
@@ -28,5 +27,5 @@ export default function useQuotes(quoteId: string) {
     if (copied) notify("🔗", "Quote link copied to the clipboard!")
   }, [quote?.id])
 
-  return { quote, handleClick, handleCopy, handleShare }
+  return { quote, handleCopy, handleGenerate, handleShare }
 }

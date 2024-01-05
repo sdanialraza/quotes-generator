@@ -14,7 +14,7 @@ type Category =
   | "Wisdom"
   | "Work"
 
-export default interface Quote {
+export interface Quote {
   author?: string
   category: Category[]
   id: number

@@ -15,8 +15,7 @@ export default function useRandomItem<T>(items: T[]) {
     setPickedIndex(randomIndex)
   }, [items.length, pickedIndex])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(change, [])
+  useEffect(change, [change])
 
   const item = items[pickedIndex]
 

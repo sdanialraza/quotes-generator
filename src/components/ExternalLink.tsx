@@ -9,7 +9,7 @@ interface Props {
 export default function ExternalLink({ children, href, title }: Props) {
   return (
     <a
-      className="text-md text-center font-semibold underline underline-offset-4 hover:text-card-color"
+      className="text-md text-center font-semibold text-card-color underline underline-offset-4 hover:text-white dark:text-white dark:hover:text-card-color"
       href={href}
       rel="noopener noreferrer"
       target="_blank"

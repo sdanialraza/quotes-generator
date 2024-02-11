@@ -21,10 +21,10 @@ export default function QuotesShow() {
         onGenerate={handleGenerate}
         onShare={handleShare}
       />
-      <Link className="mb-2 text-xl font-semibold text-hover-color dark:text-white" to="/favorites">
+      <Link className="button mb-2 bg-card-color text-center font-semibold hover:bg-gray-800" to="/favorites">
         Your Favorite Quotes
       </Link>
-      <ExternalLink href={REPOSITORY_LINK}>
+      <ExternalLink href={REPOSITORY_LINK} title="GitHub Repository">
         <FaGithub size={24} />
       </ExternalLink>
     </div>

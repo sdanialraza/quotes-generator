@@ -12,13 +12,13 @@ type Category =
   | "Sports"
   | "Success"
   | "Wisdom"
-  | "Work"
+  | "Work";
 
 export interface Quote {
-  author?: string
-  category: Category[]
-  id: number
-  text: string
-  submitter: string
-  verified: boolean
+  author?: string;
+  category: Category[];
+  id: number;
+  text: string;
+  submitter: string;
+  verified: boolean;
 }

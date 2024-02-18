@@ -1,4 +1,4 @@
-import toast from "react-hot-toast"
+import toast from "react-hot-toast";
 
 /**
  * Sends the user a toast notification with the provided icon and text
@@ -16,5 +16,5 @@ export function notify(icon: string, text: string) {
       borderRadius: "10px",
       color: "#fff",
     },
-  })
+  });
 }

@@ -1,9 +1,9 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 interface Props {
-  children: ReactNode
-  href: string
-  title?: string
+  children: ReactNode;
+  href: string;
+  title?: string;
 }
 
 export default function ExternalLink({ children, href, title }: Props) {
@@ -17,5 +17,5 @@ export default function ExternalLink({ children, href, title }: Props) {
     >
       {children}
     </a>
-  )
+  );
 }

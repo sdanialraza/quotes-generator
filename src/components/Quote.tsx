@@ -1,12 +1,12 @@
-import type { Quote } from "../util"
+import type { Quote } from "../util";
 
 interface Props {
-  quote: Quote | undefined
-  isFavorite?: boolean
-  onCopy?: () => void
-  onFavorite?: () => void
-  onGenerate?: () => void
-  onShare?: () => void
+  quote: Quote | undefined;
+  isFavorite?: boolean;
+  onCopy?: () => void;
+  onFavorite?: () => void;
+  onGenerate?: () => void;
+  onShare?: () => void;
 }
 
 export default function Quote({ quote, isFavorite, onCopy, onFavorite, onGenerate, onShare }: Props) {
@@ -15,11 +15,11 @@ export default function Quote({ quote, isFavorite, onCopy, onFavorite, onGenerat
       <div className="m-1 flex flex-col gap-4 rounded-xl bg-card-color px-5 py-6 shadow-2xl md:gap-6">
         <p>Unable to find a quote with that ID.</p>
       </div>
-    )
+    );
   }
 
   if ([onCopy, onFavorite, onGenerate, onShare].includes(undefined)) {
-    return showQuote(quote)
+    return showQuote(quote);
   }
 
   return (
@@ -45,7 +45,7 @@ export default function Quote({ quote, isFavorite, onCopy, onFavorite, onGenerat
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function showQuote(quote: Quote) {
@@ -56,5 +56,5 @@ function showQuote(quote: Quote) {
       </p>
       <p className="pb-2 text-center text-sm text-gray-300/85 dark:text-white">Submitted by {quote.submitter}</p>
     </div>
-  )
+  );
 }

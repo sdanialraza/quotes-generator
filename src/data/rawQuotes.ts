@@ -1,4 +1,4 @@
-import type { Quote } from "../util"
+import type { Quote } from "../util";
 
 export const rawQuotes: Quote[] = [
   {
@@ -407,4 +407,4 @@ export const rawQuotes: Quote[] = [
     submitter: "sdanialraza",
     verified: true,
   },
-]
+];
